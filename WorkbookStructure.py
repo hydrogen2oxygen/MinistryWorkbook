@@ -9,9 +9,11 @@ class WorkbookStructure:
 	
 	# An array of weeks (each containing one MinistryWeek)
 	weeks = []
+	# TODO configure a typical start day of the week (Friday)
+	startDate = datetime.datetime.now()
 	
 	def toString(self):
-		content = "WorkbookStructure:\n" + self.title 
+		content = "WorkbookStructure:\n" + self.title + "\nstart date " + self.startDate.strftime("%Y-%m-%d")
 		content += "\n----------------------------\n"
 		for week in self.weeks:
 			content += week.toString()
