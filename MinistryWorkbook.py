@@ -31,6 +31,9 @@ class MinistryWorkbook:
 		#	print("Date " + dateString + " cannot be transformed into an object (does not have the right format like yyyy-mm-dd)!"
 		return dateObject
 
+	def show(self):
+		print(self.workbook.toString())
+
 	# CLI Input Output Loop
 	def commandLoop(self):
 		finished = False
@@ -53,10 +56,10 @@ class MinistryWorkbook:
 						self.workbook.startDate = newDateObject
 
 				print("new book inserted")
-				print(self.workbook.toString())
+				self.show()
 
 			if command == "show":
-				print(self.workbook.toString())
+				self.show()
 
 mw = MinistryWorkbook()
 mw.printHelp()
